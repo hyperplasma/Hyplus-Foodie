@@ -55,3 +55,7 @@ hyplus:
     we-chat-pay-cert-file-path: ${hyplus.wechat.weChatPayCertFilePath}
     notify-url: ${hyplus.wechat.notifyUrl}
     refund-notify-url: ${hyplus.wechat.refundNotifyUrl}
+  shop:
+    address: ${hyplus.shop.address}
+  baidu:
+    ak: ${hyplus.baidu.ak}

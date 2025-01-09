@@ -26,3 +26,7 @@ hyplus:
     we-chat-pay-cert-file-path: %YOUR-WE-CHAT-PAY-CERT-FILE-PATH%
     notify-url: %YOUR-NOTIFY-URL%
     refund-notify-url: %YOUR-REFUND-NOTIFY-URL%
+  shop:
+    address: 浙江省杭州市拱墅区Hyperplasma广场三号楼12层
+  baidu:
+    ak: %YOUR-BAIDU-ACCESS-KEY%
