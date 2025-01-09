@@ -12,6 +12,8 @@ import top.hyperplasma.service.OrderService;
 import top.hyperplasma.vo.OrderStatisticsVO;
 import top.hyperplasma.vo.OrderVO;
 import top.hyperplasma.dto.OrdersConfirmDTO;
+import top.hyperplasma.dto.OrdersRejectionDTO;
+import top.hyperplasma.dto.OrdersCancelDTO;
 
 /**
  * 订单管理
@@ -29,7 +31,7 @@ public class OrderController {
      * 订单搜索
      *
      * @param ordersPageQueryDTO
-     * @return
+     * @return Result<PageResult>
      */
     @GetMapping("/conditionSearch")
     @ApiOperation("订单搜索")
@@ -41,7 +43,7 @@ public class OrderController {
     /**
      * 各个状态的订单数量统计
      *
-     * @return
+     * @return Result<OrderStatisticsVO>
      */
     @GetMapping("/statistics")
     @ApiOperation("各个状态的订单数量统计")
@@ -54,7 +56,7 @@ public class OrderController {
      * 订单详情
      *
      * @param id
-     * @return
+     * @return Result<OrderVO>
      */
     @GetMapping("/details/{id}")
     @ApiOperation("查询订单详情")
@@ -66,12 +68,60 @@ public class OrderController {
     /**
      * 接单
      *
-     * @return
+     * @return Result
      */
     @PutMapping("/confirm")
     @ApiOperation("接单")
     public Result confirm(@RequestBody OrdersConfirmDTO ordersConfirmDTO) {
         orderService.confirm(ordersConfirmDTO);
+        return Result.success();
+    }
+
+    /**
+     * 拒单
+     *
+     * @return Result
+     */
+    @PutMapping("/rejection")
+    @ApiOperation("拒单")
+    public Result rejection(@RequestBody OrdersRejectionDTO ordersRejectionDTO) throws Exception {
+        orderService.rejection(ordersRejectionDTO);
+        return Result.success();
+    }
+
+    /**
+     * 取消订单
+     *
+     * @return Result
+     */
+    @PutMapping("/cancel")
+    @ApiOperation("取消订单")
+    public Result cancel(@RequestBody OrdersCancelDTO ordersCancelDTO) throws Exception {
+        orderService.cancel(ordersCancelDTO);
+        return Result.success();
+    }
+
+    /**
+     * 派送订单
+     *
+     * @return Result
+     */
+    @PutMapping("/delivery/{id}")
+    @ApiOperation("派送订单")
+    public Result delivery(@PathVariable("id") Long id) {
+        orderService.delivery(id);
+        return Result.success();
+    }
+
+    /**
+     * 完成订单
+     *
+     * @return
+     */
+    @PutMapping("/complete/{id}")
+    @ApiOperation("完成订单")
+    public Result complete(@PathVariable("id") Long id) {
+        orderService.complete(id);
         return Result.success();
     }
 }
