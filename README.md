@@ -108,8 +108,21 @@ cd Hyplus-Foodie-Ultimate/hyplus-foodie-wxmp
 ```
 
 1. 打开微信开发者工具，点击“导入项目”，选择克隆的项目文件夹。
-2. 在`project.config.json`或`project.private.config.json`中设置项目`APPID`（需要在<a href="https://mp.weixin.qq.com/cgi-bin/wx?token=&lang=zhCN">微信公众平台</a>申请）。
-3. 在微信开发者工具中配置项目的合法域名、业务域名等。
+2. 可对配置文件`project.private.config.json`进行如下设置——
+
+```json
+{
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "appid": "%YOUR-APPID%",  
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+}
+```
+
+其中`APPID`需在<a href="https://mp.weixin.qq.com/cgi-bin/wx?token=&lang=zhCN">微信公众平台</a>申请。
+
+如有需要，可进一步配置项目的合法域名、业务域名等。
 
 ### 运行项目
 
