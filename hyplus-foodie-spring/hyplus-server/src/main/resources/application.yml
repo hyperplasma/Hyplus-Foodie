@@ -48,3 +48,10 @@ hyplus:
   wechat:
     appid: ${hyplus.wechat.appid}
     secret: ${hyplus.wechat.secret}
+    mchid: ${hyplus.wechat.mchid}
+    mch-serial-no: ${hyplus.wechat.mchSerialNo}
+    private-key-file-path: ${hyplus.wechat.privateKeyFilePath}
+    api-v3-key: ${hyplus.wechat.apiV3Key}
+    we-chat-pay-cert-file-path: ${hyplus.wechat.weChatPayCertFilePath}
+    notify-url: ${hyplus.wechat.notifyUrl}
+    refund-notify-url: ${hyplus.wechat.refundNotifyUrl}

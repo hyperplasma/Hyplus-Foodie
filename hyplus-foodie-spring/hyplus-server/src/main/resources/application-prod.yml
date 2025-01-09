@@ -19,3 +19,10 @@ hyplus:
   wechat:
     appid: %YOUR-APPID%
     secret: %YOUR-SECRET%
+    mchid: %YOUR-MCHID%
+    mch-serial-no: %YOUR-MCH-SERIAL-NO%
+    private-key-file-path: %YOUR-PRIVATE-KEY-FILE-PATH%
+    api-v3-key: %YOUR-API-V3-KEY%
+    we-chat-pay-cert-file-path: %YOUR-WE-CHAT-PAY-CERT-FILE-PATH%
+    notify-url: %YOUR-NOTIFY-URL%
+    refund-notify-url: %YOUR-REFUND-NOTIFY-URL%
