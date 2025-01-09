@@ -108,7 +108,7 @@ cd Hyplus-Foodie-Ultimate/hyplus-foodie-wxmp
 ```
 
 1. 打开微信开发者工具，点击“导入项目”，选择克隆的项目文件夹。
-2. 可对配置文件`project.private.config.json`进行如下设置——
+2. 可对配置文件`project.private.config.json`进行如下设置：
 
 ```json
 {
