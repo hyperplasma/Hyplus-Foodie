@@ -1,11 +1,14 @@
 package top.hyperplasma.service;
 
+import top.hyperplasma.dto.OrdersPageQueryDTO;
 import top.hyperplasma.dto.OrdersPaymentDTO;
 import top.hyperplasma.dto.OrdersSubmitDTO;
 import top.hyperplasma.result.PageResult;
 import top.hyperplasma.vo.OrderPaymentVO;
+import top.hyperplasma.vo.OrderStatisticsVO;
 import top.hyperplasma.vo.OrderSubmitVO;
 import top.hyperplasma.vo.OrderVO;
+import top.hyperplasma.dto.OrdersConfirmDTO;
 
 public interface OrderService {
 
@@ -21,7 +24,7 @@ public interface OrderService {
      * 订单支付
      *
      * @param ordersPaymentDTO
-     * @return
+     * @return OrderPaymentVO
      */
     OrderPaymentVO payment(OrdersPaymentDTO ordersPaymentDTO) throws Exception;
 
@@ -63,4 +66,26 @@ public interface OrderService {
      * @param id
      */
     void repetition(Long id);
+
+    /**
+     * 条件搜索订单
+     *
+     * @param ordersPageQueryDTO
+     * @return PageResult
+     */
+    PageResult conditionSearch(OrdersPageQueryDTO ordersPageQueryDTO);
+
+    /**
+     * 各个状态的订单数量统计
+     *
+     * @return
+     */
+    OrderStatisticsVO statistics();
+
+    /**
+     * 接单
+     *
+     * @param ordersConfirmDTO
+     */
+    void confirm(OrdersConfirmDTO ordersConfirmDTO);
 }
