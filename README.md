@@ -23,7 +23,7 @@
 git clone https://github.com/Akira37R/Hyplus-Foodie.git
 ```
 
-## 后端架构 hyplus-foodie-spring
+## Java后端
 
 ### 技术栈
 
@@ -82,7 +82,7 @@ docker run -d -p 8080:8080 hyplus-foodie
  * 通过ApiFox、Postman等工具测试请求响应，可导入`assets/YApi`目录中提供的用户端、管理端接口文档（格式为YApi`json`）。
  * 使用本系统内置的knife4j生成Api文档及在线接口调试页面，默认请求路径为`/doc.html`（浏览器中直接访问`localhost:8080/doc.html`）。
 
-## 微信小程序架构（用户端）hyplus-foodie-wxmp
+## 微信小程序（用户端）
 
 ### 技术栈
 
