@@ -1,7 +1,9 @@
 package top.hyperplasma.mapper;
 
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import top.hyperplasma.dto.OrdersPageQueryDTO;
 import top.hyperplasma.entity.Orders;
 
 @Mapper
@@ -29,4 +31,20 @@ public interface OrderMapper {
      */
     void update(Orders orders);
 
+    /**
+     * 分页条件查询并按下单时间排序
+     *
+     * @param ordersPageQueryDTO
+     * @return Page<Orders>
+     */
+    Page<Orders> pageQuery(OrdersPageQueryDTO ordersPageQueryDTO);
+
+    /**
+     * 根据id查询订单
+     *
+     * @param id
+     * @return Orders
+     */
+    @Select("select * from orders where id=#{id}")
+    Orders getById(Long id);
 }
