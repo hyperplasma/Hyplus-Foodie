@@ -53,7 +53,7 @@ Hyplus Foodie后端（`hyplus-foodie-spring`）使用以下技术栈：
 
 #### 配置数据
 
-1. 创建一个新的MySQL数据库：参照`hyplus-foodie-spring/assets/database`目录下的数据库设计文档`design.md`，执行`init.sql`。
+1. 创建一个新的MySQL数据库：参照`assets/database`目录下的数据库设计文档`design.md`，执行`init.sql`。
 2. 修改`hyplus-foodie-spring/hyplus-server/src/main/resources`目录下的产品配置文件`application-prod.yml`，配置自定义字段（持久层、阿里云、Redis、小程序等）。
 3. 确保`application.yml`中的`spring.profiles.active`为`prod`。
 
@@ -134,6 +134,6 @@ Hyplus Foodie欢迎任何形式的贡献，包括但不限于代码、文档、�
 - Hyplus官网：https://www.hyperplasma.top
 - 地址：浙江省杭州市拱墅区Hyperplasma广场三号楼12层
 
-<img src="hyplus-foodie-spring/assets/hyperplasma_logo_v1_whitebg.png">
+<img src="assets/hyperplasma_logo_v1_whitebg.png">
 
 感谢您使用Hyplus-Foodie！
