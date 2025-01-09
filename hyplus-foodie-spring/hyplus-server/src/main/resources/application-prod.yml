@@ -1,0 +1,21 @@
+hyplus:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost   # 默认
+    port: 3306        # 默认
+    database: hyplus-foodie
+    username: %YOUR-USERNAME%
+    password: %YOUR-PASSWORD%
+  alioss:
+    endpoint: %YOUR-ENDPOINT%
+    access-key-id: %YOUR-ACCESS-KEY-ID%
+    access-key-secret: %YOUR-ACCESS-KEY-SECRET%
+    bucket-name: %YOUR-BUCKET-NAME%
+  redis:
+    host: localhost # 默认
+    port: 6379      # 默认
+    password: %YOUR-PASSWORD%   # 无密码则无视该行
+    database: 0     # 默认
+  wechat:
+    appid: %YOUR-APPID%
+    secret: %YOUR-SECRET%

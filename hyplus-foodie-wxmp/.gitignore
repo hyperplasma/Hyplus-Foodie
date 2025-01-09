@@ -1,0 +1,42 @@
+.DS_Store
+*.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 可执行文件
+*.exe
+*.dll
+*.so
+*.dylib
+
+# 日志文件
+*.log
+
+# 编译生成的文件
+*.o
+*.out
+*.obj
+
+# 临时文件
+*.tmp
+
+# IDE 配置文件
+.idea/
+.vscode/
+
+# 构建目录
+build/
+dist/
+
+# 依赖管理工具生成的文件
+node_modules/
+package-lock.json
+yarn.lock
+
+# 测试覆盖率文件
+coverage/
+
+# Docker
+.dockerignore
+/node-modules/

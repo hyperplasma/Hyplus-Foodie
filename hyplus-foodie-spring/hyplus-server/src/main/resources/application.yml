@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    druid:
+      driver-class-name: ${hyplus.datasource.driver-class-name}
+      url: jdbc:mysql://${hyplus.datasource.host}:${hyplus.datasource.port}/${hyplus.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: ${hyplus.datasource.username}
+      password: ${hyplus.datasource.password}
+  redis:
+    host: ${hyplus.redis.host}
+    port: ${hyplus.redis.port}
+    password: ${hyplus.redis.password}
+    database: ${hyplus.redis.database}
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  # mapper配置文件
+  type-aliases-package: top.hyperplasma.entity
+  configuration:
+    map-underscore-to-camel-case: true  # 开启驼峰命名
+
+logging:
+  level:
+    com:
+      sky:
+        mapper: debug
+        service: info
+        controller: info
+
+hyplus:
+  jwt:
+    admin-secret-key: hyplus  # jwt签名加密时使用的秘钥
+    admin-ttl: 7200000  # jwt过期时间（单位：ms）
+    admin-token-name: token # 前端传递过来的令牌名称
+    user-secret-key: hyplus
+    user-ttl: 7200000
+    user-token-name: authentication
+  alioss:
+    endpoint: ${hyplus.alioss.endpoint}
+    access-key-id: ${hyplus.alioss.accessKeyId}
+    access-key-secret: ${hyplus.alioss.accessKeySecret}
+    bucket-name: ${hyplus.alioss.bucketName}
+  wechat:
+    appid: ${hyplus.wechat.appid}
+    secret: ${hyplus.wechat.secret}
