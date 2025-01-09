@@ -20,7 +20,7 @@
 ## 克隆仓库
 
 ```sh
-git clone https://github.com/Akira37R/Hyplus-Foodie-Ultimate.git
+git clone https://github.com/Akira37R/Hyplus-Foodie.git
 ```
 
 ## 后端架构 hyplus-foodie-spring
@@ -60,7 +60,7 @@ Hyplus Foodie后端（`hyplus-foodie-spring`）使用以下技术栈：
 #### 构建和运行
 
 ```sh
-cd Hyplus-Foodie-Ultimate/hyplus-foodie-spring
+cd Hyplus-Foodie/hyplus-foodie-spring
 ```
 
 本地运行：
@@ -143,7 +143,7 @@ Hyplus Foodie欢迎任何形式的贡献，包括但不限于代码、文档、�
 如果您有任何问题或建议，请通过以下方式联系我们：
 
 - Email: <u>akira37@foxmail.com</u>
-- GitHub: https://github.com/Akira37R/Hyplus-Foodie-Ultimate
+- GitHub: https://github.com/Akira37R/Hyplus-Foodie
 - Hyplus官网：https://www.hyperplasma.top
 - 地址：浙江省杭州市拱墅区Hyperplasma广场三号楼12层
 
