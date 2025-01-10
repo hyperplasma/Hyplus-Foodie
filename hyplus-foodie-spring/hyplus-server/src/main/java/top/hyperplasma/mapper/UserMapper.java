@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import top.hyperplasma.entity.User;
 
+import java.util.Map;
+
 @Mapper
 public interface UserMapper {
 
@@ -31,4 +33,12 @@ public interface UserMapper {
      */
     @Select("select * from user where id = #{userId}")
     User getById(Long userId);
+
+    /**
+     * 动态条件统计用户数量
+     *
+     * @param map
+     * @return Integer
+     */
+    Integer countByMap(Map map);
 }
