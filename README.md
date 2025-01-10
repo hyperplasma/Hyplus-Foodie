@@ -77,12 +77,11 @@ docker build -t hyplus-foodie .
 docker run -d -p 8080:8080 hyplus-foodie
 ```
 
-本系统暂不含管理端前端框架，故需自行搭建调试入口，或效仿下述方式：
+本系统暂不含管理端前端框架，故需自行搭建调试入口，可利用ApiFox、Postman等工具，导入`assets/YApi`目录中提供的用户端、管理端接口文档（格式为YApi`json`）来测试请求响应。
 
- * 通过ApiFox、Postman等工具测试请求响应，可导入`assets/YApi`目录中提供的用户端、管理端接口文档（格式为YApi`json`）。
- * 使用本系统内置的knife4j生成Api文档及在线接口调试页面，默认请求路径为`/doc.html`（浏览器中直接访问`localhost:8080/doc.html`）。
+强烈推荐使用本系统内置的knife4j生成Api文档及在线接口调试页面，默认请求路径为`/doc.html`（浏览器中直接访问<a href="http://localhost:8080/doc.html">http://localhost:8080/doc.html</a>）。
 
-http://localhost:8080/doc.html
+
 
 ## 微信小程序（用户端）
 
