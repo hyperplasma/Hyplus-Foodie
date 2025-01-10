@@ -77,10 +77,10 @@ docker build -t hyplus-foodie .
 docker run -d -p 8080:8080 hyplus-foodie
 ```
 
-本系统暂不含管理端前端框架，故需自行搭建调试入口，可利用ApiFox、Postman等工具，导入`assets/YApi`目录中提供的用户端、管理端接口文档（格式为YApi`json`）来测试请求响应。
 
 强烈推荐使用本系统内置的knife4j生成Api文档及在线接口调试页面，默认请求路径为`/doc.html`（浏览器中直接访问<a href="http://localhost:8080/doc.html">http://localhost:8080/doc.html</a>）。
 
+亦可使用ApiFox、Postman等工具进行接口测试，只需导入`assets/YApi`目录中提供的用户端、管理端接口文档，注意格式为YApi`json`。
 
 
 ## 微信小程序（用户端）
@@ -102,7 +102,7 @@ Hyplus Foodie微信小程序（`hyplus-foodie-wxmp`）使用以下技术栈：
 - 微信开发者工具 2.24.2 或更高版本
 
 
-### 配置小程序
+#### 配置小程序
 
 ```sh
 cd Hyplus-Foodie-Ultimate/hyplus-foodie-wxmp
@@ -129,6 +129,48 @@ cd Hyplus-Foodie-Ultimate/hyplus-foodie-wxmp
 
 1. 在<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html">微信开发者工具</a>中点击“编译”按钮。
 2. 在模拟器中预览和调试小程序。
+
+## 网页版管理端
+
+### 技术栈
+
+Hyplus Foodie网页版管理端（`hyplus-foodie-vue`）使用以下技术栈：
+
+- **前端语言**: JavaScript, TypeScript 
+- **框架**: Vue 3
+- **构建工具**: Vite
+- **版本控制**: Git
+
+### 安装和运行
+
+#### 系统要求
+
+在使用`hyplus-foodie-vue`之前，请确保您的系统满足以下要求：
+
+- Node.js 14 或更高版本
+- npm 6 或更高版本
+
+#### 配置项目
+
+```sh
+cd Hyplus-Foodie/hyplus-foodie-vue
+```
+
+1. 安装依赖：
+```sh
+npm install
+```
+2. 配置环境变量文件`.env`，根据实际情况填写相关配置项。
+
+#### 运行项目
+
+1. 启动开发服务器：
+```sh
+npm run dev
+```
+2. 在浏览器中打开<a href="http://localhost:3000">http://localhost:3000</a>，即可访问前端管理端。
+
+
 
 
 ## 贡献
