@@ -28,6 +28,7 @@ import top.hyperplasma.vo.OrderPaymentVO;
 import top.hyperplasma.vo.OrderSubmitVO;
 import top.hyperplasma.vo.OrderVO;
 import top.hyperplasma.vo.OrderStatisticsVO;
+import top.hyperplasma.websocket.WebSocketServer;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -59,6 +60,8 @@ public class OrderServiceImpl implements OrderService {
     private UserMapper userMapper;
     @Autowired
     private WeChatPayUtil weChatPayUtil;
+    @Autowired
+    private WebSocketServer webSocketServer;
 
     /**
      * 用户下单
@@ -155,7 +158,6 @@ public class OrderServiceImpl implements OrderService {
      * @param outTradeNo
      */
     public void paySuccess(String outTradeNo) {
-
         // 根据订单号查询订单
         Orders ordersDB = orderMapper.getByNumber(outTradeNo);
 
@@ -168,6 +170,14 @@ public class OrderServiceImpl implements OrderService {
                 .build();
 
         orderMapper.update(orders);
+
+        // 通过WebSocket向客户端浏览器推送消息：type orderId content
+        Map map = new HashMap();
+        map.put("type", 1); // 1来单提醒，2催单
+        map.put("orderId", ordersDB.getId());
+        map.put("content", "订单号：" + outTradeNo);
+        String json = JSON.toJSONString(map);
+        webSocketServer.sendToAllClient(json);
     }
 
     /**
@@ -493,6 +503,29 @@ public class OrderServiceImpl implements OrderService {
         orders.setDeliveryTime(LocalDateTime.now());
 
         orderMapper.update(orders);
+    }
+
+    /**
+     * 客户催单
+     *
+     * @param id
+     */
+    public void reminder(Long id) {
+        // 根据id查询订单
+        Orders ordersDB = orderMapper.getById(id);
+
+        // 校验订单是否存在
+        if (ordersDB == null) {
+            throw new OrderBusinessException(MessageConstant.ORDER_STATUS_ERROR);
+        }
+
+        Map map = new HashMap();
+        map.put("type", 2);  // 1来单提醒，2客户催单
+        map.put("orderId", id);
+        map.put("content", ordersDB.getNumber());
+
+        // 通过WebSocket向客户端浏览器推送消息9
+        webSocketServer.sendToAllClient(JSON.toJSONString(map));
     }
 
     /**
