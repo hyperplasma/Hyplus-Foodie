@@ -12,36 +12,36 @@
                 #{deliveryStatus}, #{deliveryTime}, #{packAmount}, #{tablewareNumber}, #{tablewareStatus})
     </insert>
 
-        <update id="update" parameterType="top.hyperplasma.entity.Orders">
-            update orders
-            <set>
-                <if test="cancelReason != null and cancelReason!='' ">
-                    cancel_reason=#{cancelReason},
-                </if>
-                <if test="rejectionReason != null and rejectionReason!='' ">
-                    rejection_reason=#{rejectionReason},
-                </if>
-                <if test="cancelTime != null">
-                    cancel_time=#{cancelTime},
-                </if>
-                <if test="payStatus != null">
-                    pay_status=#{payStatus},
-                </if>
-                <if test="payMethod != null">
-                    pay_method=#{payMethod},
-                </if>
-                <if test="checkoutTime != null">
-                    checkout_time=#{checkoutTime},
-                </if>
-                <if test="status != null">
-                    status = #{status},
-                </if>
-                <if test="deliveryTime != null">
-                    delivery_time = #{deliveryTime}
-                </if>
-            </set>
-            where id = #{id}
-        </update>
+    <update id="update" parameterType="top.hyperplasma.entity.Orders">
+        update orders
+        <set>
+            <if test="cancelReason != null and cancelReason!='' ">
+                cancel_reason=#{cancelReason},
+            </if>
+            <if test="rejectionReason != null and rejectionReason!='' ">
+                rejection_reason=#{rejectionReason},
+            </if>
+            <if test="cancelTime != null">
+                cancel_time=#{cancelTime},
+            </if>
+            <if test="payStatus != null">
+                pay_status=#{payStatus},
+            </if>
+            <if test="payMethod != null">
+                pay_method=#{payMethod},
+            </if>
+            <if test="checkoutTime != null">
+                checkout_time=#{checkoutTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="deliveryTime != null">
+                delivery_time = #{deliveryTime}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
 
     <select id="pageQuery" resultType="top.hyperplasma.entity.Orders">
         select * from orders
@@ -97,5 +97,18 @@
             </if>
         </where>
     </select>
-
+    <select id="getSalesTop10" resultType="top.hyperplasma.dto.GoodsSalesDTO">
+        select od.name, sum(od.number) num
+        from order_detail od, orders o
+        where od.order_id = o.id and o.status = 5
+        <if test="begin != null">
+            and o.order_time &gt; #{begin}
+        </if>
+        <if test="end != null">
+            and o.order_time &lt; #{end}
+        </if>
+        group by od.name
+        order by num desc
+        limit 0, 10
+    </select>
 </mapper>

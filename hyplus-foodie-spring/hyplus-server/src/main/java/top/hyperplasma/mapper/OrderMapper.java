@@ -3,6 +3,7 @@ package top.hyperplasma.mapper;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import top.hyperplasma.dto.GoodsSalesDTO;
 import top.hyperplasma.dto.OrdersPageQueryDTO;
 import top.hyperplasma.entity.Orders;
 
@@ -85,4 +86,13 @@ public interface OrderMapper {
      * @return Integer
      */
     Integer countByMap(Map map);
+
+    /**
+     * 统计指定时间区间内的销量排名
+     *
+     * @param begin
+     * @param end
+     * @return List<GoodsSalesDTO>
+     */
+    List<GoodsSalesDTO> getSalesTop10(LocalDateTime begin, LocalDateTime end);
 }

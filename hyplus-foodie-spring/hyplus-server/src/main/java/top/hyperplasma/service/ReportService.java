@@ -1,6 +1,7 @@
 package top.hyperplasma.service;
 
 import top.hyperplasma.vo.OrderReportVO;
+import top.hyperplasma.vo.SalesTop10ReportVO;
 import top.hyperplasma.vo.TurnoverReportVO;
 import top.hyperplasma.vo.UserReportVO;
 
@@ -34,4 +35,12 @@ public interface ReportService {
      * @return OrderReportVO
      */
     OrderReportVO getOrdersStatistics(LocalDate begin, LocalDate end);
+
+    /**
+     * 统计指定时间区间内的销量排名前10
+     * @param begin
+     * @param end
+     * @return
+     */
+    SalesTop10ReportVO getSalesTop10(LocalDate begin, LocalDate end);
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import top.hyperplasma.result.Result;
 import top.hyperplasma.service.ReportService;
 import top.hyperplasma.vo.OrderReportVO;
+import top.hyperplasma.vo.SalesTop10ReportVO;
 import top.hyperplasma.vo.TurnoverReportVO;
 import top.hyperplasma.vo.UserReportVO;
 
@@ -74,5 +75,21 @@ public class ReportController {
             @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate end) {
         log.info("订单统计：{} - {}", begin, end);
         return Result.success(reportService.getOrdersStatistics(begin, end));
+    }
+
+    /**
+     * 销量排名top10
+     *
+     * @param begin
+     * @param end
+     * @return Result<SalesTop10ReportVO>
+     */
+    @GetMapping("/top10")
+    @ApiOperation(value = "销量排名top10")
+    public Result<SalesTop10ReportVO> top10(
+            @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate begin,
+            @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate end) {
+        log.info("销量排名top10：{} - {}", begin, end);
+        return Result.success(reportService.getSalesTop10(begin, end));
     }
 }
