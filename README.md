@@ -27,7 +27,7 @@ git clone https://github.com/Akira37R/Hyplus-Foodie.git
 
 ### 技术栈
 
-Hyplus Foodie后端（`hyplus-foodie-spring`）使用以下技术栈：
+Hyplus Foodie后端（`hyplus-foodie-spring`）是本系统的核心，主要使用以下技术栈：
 
 - **后端语言**: Java (JDK 11)
 - **框架**: Spring Boot (2.5.4)
@@ -78,7 +78,7 @@ docker run -d -p 8080:8080 hyplus-foodie
 ```
 
 
-强烈推荐使用本系统内置的knife4j生成Api文档及在线接口调试页面，默认请求路径为`/doc.html`（浏览器中直接访问<a href="http://localhost:8080/doc.html">http://localhost:8080/doc.html</a>）。
+强烈推荐使用内置的knife4j生成Api文档及在线接口调试页面，默认请求路径为`/doc.html`（浏览器中直接访问<a href="http://localhost:8080/doc.html">http://localhost:8080/doc.html</a>）。
 
 亦可使用ApiFox、Postman等工具进行接口测试，只需导入`assets/YApi`目录中提供的用户端、管理端接口文档，注意格式为YApi`json`。
 
@@ -87,7 +87,7 @@ docker run -d -p 8080:8080 hyplus-foodie
 
 ### 技术栈
 
-Hyplus Foodie微信小程序（`hyplus-foodie-wxmp`）使用以下技术栈：
+Hyplus Foodie微信小程序（`hyplus-foodie-wxmp`）主要使用以下技术栈：
 
 - **前端语言**: JavaScript
 - **框架**: 微信小程序开发框架
@@ -134,7 +134,7 @@ cd Hyplus-Foodie-Ultimate/hyplus-foodie-wxmp
 
 ### 技术栈
 
-Hyplus Foodie网页版管理端（`hyplus-foodie-vue`）使用以下技术栈：
+Hyplus Foodie网页版管理端（`hyplus-foodie-vue`）主要使用以下技术栈：
 
 - **前端语言**: JavaScript, TypeScript 
 - **框架**: Vue 3
