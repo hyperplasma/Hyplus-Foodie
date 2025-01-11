@@ -38,6 +38,7 @@ Hyplus Foodie后端（`hyplus-foodie-spring`）是本系统的核心，主要使
 - **持续集成/持续部署**: GitHub Actions
 - **缓存**: Redis
 
+
 ### 安装和运行
 
 #### 系统要求
