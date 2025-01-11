@@ -1,6 +1,6 @@
 # Hyplus Foodie
 
-**Hyplus Foodie**（**神威食客**）是<a href="https://www.hyperplasma.top" target="_blank">Hyperplasma</a>旗下的一款开源的新型外卖服务系统，致力于为用户提供最为便捷的美食体验。通过其高效、可靠的设计，用户可以随时随地轻松下单，享受独具Hyperplasma风味的美食体验。无论是忙碌的工作日还是悠闲的周末，Hyplus Foodie都能满足您的用餐需求，让美食触手可及。
+**Hyplus Foodie**（**神威食客**）是<a href="https://www.hyperplasma.top" target="_blank">Hyperplasma</a>旗下的一款开源的新型外卖服务系统，致力于为用户提供最为便捷、可靠的美食体验。通过其科学的前后端设计，用户可以随时随地轻松下单，享受独具Hyperplasma风味的美食体验。无论是忙碌的工作日还是悠闲的周末，Hyplus Foodie都能满足您的用餐需求，让美食触手可及。
 
 食客为神，美味双绝；佳肴无疆，享尽盛宴！
 
@@ -36,7 +36,6 @@ Hyplus Foodie后端（`hyplus-foodie-spring`）是本系统的核心，主要使
 - **版本控制**: Git
 - **容器化**: Docker (20.10)
 - **持续集成/持续部署**: GitHub Actions
-- **消息队列**: RabbitMQ
 - **缓存**: Redis
 
 ### 安装和运行
