@@ -1,8 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "navigationBarTitleText": "神威食客",
-  "usingComponents": {
-    "nav-bar": "/pages/common/Navbar/navbar",
-    "phone": "/components/uni-phone/index"
-  }
-}
